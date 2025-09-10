@@ -4,12 +4,14 @@ body {
   padding: 0;
 }
 
+/*barra superior*/
 header {
   background-color: #f2f2f2;
   padding: 10px;
 }
 
-.buscador-container {
+
+.bloque-buscador {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,17 +36,18 @@ header {
   font-size: 14px;
 }
 
-.ingresar-btn button {
+.boton-ingresar button {
   padding: 5px 30px;
   font-size: 14px;
 }
 
+/*barra de accesibilidad*/
 nav {
   background-color: #e63535;
   padding: 10px;
   margin-top: 10px;
 }
-
+    
 nav ul {
   list-style: none;
   display: flex;
@@ -63,6 +66,8 @@ nav a {
   font-weight: bold;
 }
 
+
+/*contenido (titulo seccion)*/
 main {
   padding: 20px;
 }
@@ -71,7 +76,9 @@ main h2 {
   text-align: center;
 }
 
-.cartas-ofertas {
+
+/*visualizacion fila de cartas*/
+.cartas {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
@@ -79,7 +86,8 @@ main h2 {
   justify-items: center;
 }
 
-.bloque-carta-ofertas {
+/*personalizcion del bloque*/
+.bloque-carta {
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
@@ -93,7 +101,7 @@ main h2 {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.carta-ofertas img {
+.carta-img img {
   width: 160px; 
   height: auto;
   object-fit: cover;
@@ -101,7 +109,7 @@ main h2 {
   border-radius: 6px;
 }
 
-.info-carta-oferta {
+.info-carta {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,25 +119,29 @@ main h2 {
   text-align: center;
 }
 
-.tipo-oferta {
+/*color y nombre del tcgc*/
+.tipo-tcg {
   color: #888;
   font-size: 14px;
   text-align: right;
 }
 
-.nombre-oferta {
+/*color y nombre de la carta*/
+.nombre-carta {
   font-weight: bold;
   font-size: 20px;
   color: #000;
   margin-top: 5px;
 }
 
-.descripcion-oferta {
+/*color/personalizacion info*/
+.descripcion-carta {
   color: #666;
   font-size: 14px;
   margin-top: 5px;
 }
 
+/*bloque del precio*/
 .precio-oferta {
   display: flex;
   flex-direction: column; 
@@ -139,19 +151,33 @@ main h2 {
   font-size: 16px;
 }
 
+/*texto (oferta actual:)*/
 .precio-oferta .etiqueta {
   font-size: 14px;
   color: #555;
 }
 
+/*precio ($0000)*/
 .precio-oferta .valor {
   font-size: 18px;
-  color: #000;
+  color: #29c909;
   margin-top: 5px;
 }
 
+/*texto tiempo*/
 .tiempo-oferta {
-  margin-top: 0px;
+  margin-top: 50px;
   font-size: 12px;
-  color: #555;
+  color: #000000;
+  text-align: center;
+}
+
+/*personalizacion texto*/
+.programada {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

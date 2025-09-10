@@ -1,1 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.buscador-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.buscador {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.buscador input {
+  text-align: center;
+  width: 600px;
+  padding: 5px;
+}
+
+.buscador button {
+  padding: 5px 25px;
+  font-size: 14px;
+}
+
+.ingresar-btn button {
+  padding: 5px 30px;
+  font-size: 14px;
+}
+
+nav {
+  background-color: #e63535;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 100px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+main h2 {
+  text-align: center;
+}
+
+.cartas-ofertas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.bloque-carta-ofertas {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 25px;
+  width: 80%;
+  max-width: 650px;
+  min-height: 220px; 
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.carta-ofertas img {
+  width: 160px; 
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 6px;
+}
+
+.info-carta-oferta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.tipo-oferta {
+  color: #888;
+  font-size: 14px;
+  text-align: right;
+}
+
+.nombre-oferta {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  margin-top: 5px;
+}
+
+.descripcion-oferta {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.precio-oferta {
+  display: flex;
+  flex-direction: column; 
+  margin-top: 15px;
+  font-weight: bold;
+  color: #222;
+  font-size: 16px;
+}
+
+.precio-oferta .etiqueta {
+  font-size: 14px;
+  color: #555;
+}
+
+.precio-oferta .valor {
+  font-size: 18px;
+  color: #000;
+  margin-top: 5px;
+}
+
+.tiempo-oferta {
+  margin-top: 0px;
+  font-size: 12px;
+  color: #555;
+}

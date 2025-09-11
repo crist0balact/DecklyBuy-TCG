@@ -46,7 +46,7 @@ nav {
   padding: 10px;
   margin-top: 10px;
 }
-    
+
 nav ul {
   list-style: none;
   display: flex;
@@ -74,6 +74,15 @@ main h2 {
   text-align: center;
 }
 
+.programada {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 /*visualizacion fila de cartas*/
 .cartas {
   display: grid;
@@ -92,14 +101,14 @@ main h2 {
   padding: 25px;
   width: 80%;
   max-width: 650px;
-  min-height: 220px; 
+  min-height: 220px;
   box-sizing: border-box;
   position: relative;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .carta-img img {
-  width: 160px; 
+  width: 160px;
   height: auto;
   object-fit: cover;
   margin-right: 20px;
@@ -110,7 +119,7 @@ main h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   flex: 1;
   position: relative;
   text-align: center;
@@ -141,7 +150,7 @@ main h2 {
 /*bloque del precio*/
 .precio-oferta {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin-top: 15px;
   font-weight: bold;
   color: #222;
@@ -166,15 +175,6 @@ main h2 {
   text-align: center;
 }
 
-.programada {
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 /* Alineación horizontal de los bloques de promoción */
 .bloque-promos {
   display: flex;
@@ -193,4 +193,29 @@ main h2 {
 .bloque-promos .carta-img img {
   width: 350px;
   height: 200px;
+}
+
+/* Ajustes exclusivos para categories.html */
+.bloque-carta-categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.bloque-carta-categorias .carta-img {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+}
+
+.logo-juego {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }

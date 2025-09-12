@@ -1,3 +1,4 @@
+//Función botón Categorias Pokémon
 document.addEventListener("DOMContentLoaded", function () {
   const btnPokemon = document.getElementById("btn-pokemon");
 
@@ -7,6 +8,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+//Función botón Categorias Magic The Gathering
+document.addEventListener("DOMContentLoaded", function () {
+  const btnMagic = document.getElementById("btn-magic");
+
+  if (btnMagic) {
+    btnMagic.addEventListener("click", function () {
+      window.location.href = "categories-magic.html";
+    });
+  }
+});
+
+//Función botón Categorias YuGiOh
+document.addEventListener("DOMContentLoaded", function () {
+  const btnYugioh = document.getElementById("btn-yugioh");
+
+  if (btnYugioh) {
+    btnYugioh.addEventListener("click", function () {
+      window.location.href = "categories-yugioh.html";
+    });
+  }
+});
+
+//Función botón Categorias Mitos y Leyendas
+document.addEventListener("DOMContentLoaded", function () {
+  const btnMitos = document.getElementById("btn-mitos");
+
+  if (btnMitos) {
+    btnMitos.addEventListener("click", function () {
+      window.location.href = "categories-mitos.html";
+    });
+  }
+});
+
 
 //Filtrado de cartas (index.html)
 const searchButton = document.getElementById('search-button');

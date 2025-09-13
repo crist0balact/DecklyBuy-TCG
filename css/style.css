@@ -1,1 +1,366 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+/*barra superior*/ 
+header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.bloque-buscador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.buscador {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.buscador input {
+  text-align: center;
+  width: 600px;
+  padding: 5px;
+}
+
+.buscador button {
+  padding: 5px 25px;
+  font-size: 14px;
+}
+
+.boton-ingresar button {
+  padding: 5px 30px;
+  font-size: 14px;
+}
+
+/*barra de accesibilidad*/
+nav {
+  background-color: #e63535;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 100px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/*contenido (titulo seccion)*/
+main {
+  padding: 20px;
+}
+
+main h2 {
+  text-align: center;
+}
+
+.programada {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*visualizacion fila de cartas*/
+.cartas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/*personalizcion del bloque*/
+.bloque-carta {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 25px;
+  width: 80%;
+  max-width: 650px;
+  min-height: 220px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.carta-img img {
+  width: 160px;
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 6px;
+}
+
+.info-carta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+/*color y nombre del tcgc*/
+.tipo-tcg {
+  color: #888;
+  font-size: 14px;
+  text-align: center;
+}
+
+/*color y nombre de la carta*/
+.nombre-carta {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  margin-top: 5px;
+}
+
+/*color/personalizacion info*/
+.descripcion-carta {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/*bloque del precio*/
+.precio-oferta {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #222;
+  font-size: 16px;
+}
+
+.precio-oferta .etiqueta {
+  font-size: 14px;
+  color: #555;
+}
+
+.precio-oferta .valor {
+  font-size: 18px;
+  color: #29c909;
+  margin-top: 5px;
+}
+
+.tiempo-oferta {
+  margin-top: 50px;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+}
+
+/* Alineación horizontal de los bloques de promoción */
+.bloque-promos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.bloque-promos .bloque-carta {
+  width: 45%;
+  max-width: none;
+}
+
+/* Agranda las imágenes solo en la sección de promociones */
+.bloque-promos .carta-img img {
+  width: 350px;
+  height: 200px;
+}
+
+/* Ajustes exclusivos para categories.html */
+.bloque-carta-categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.bloque-carta-categorias .carta-img {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+}
+
+.logo-juego {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/*ajustes para contacto*/
+.zona-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+.info-contacto {
+  max-width: 600px;
+  margin: 1 auto 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: #333;
+}
+
+.info-contacto h3 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.info-contacto h3 span {
+  color: #c00; 
+}
+
+.info-contacto p {
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+.formulario-contacto {
+  width: 430px;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 0px;
+  color: #333;
+  text-align: center;
+}
+
+.formulario-contacto h4 {
+  font-size: 15px;
+  text-align: left;
+}
+
+.formulario-contacto h5 {
+  font-size: 10px;
+  text-align: left;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.btn-enviar {
+  display: block;
+  margin-top: 20px;            
+  width: 100%;                 
+  padding: 12px 0;            
+  background-color: #d31414;
+  border: 1px solid #000000;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+.mensaje-formulario {
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mensaje-error {
+  background-color: #ffe0e0;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+}
+
+.mensaje-exito {
+  background-color: #e0ffe0;
+  color: #007700;
+  border: 1px solid #007700;
+}
+
+.btn-enviar {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #d31414;
+  border: 1px solid #000000;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-regresar {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #555;
+  border: 1px solid #000;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mensaje-formulario {
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mensaje-error {
+  background-color: #ffe0e0;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+}
+
+.mensaje-exito {
+  background-color: #e0ffe0;
+  color: #007700;
+  border: 1px solid #007700;
+}

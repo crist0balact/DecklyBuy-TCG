@@ -294,3 +294,73 @@ main h2 {
   font-size: 15px;
   border-radius: 4px;
 }
+
+.mensaje-formulario {
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mensaje-error {
+  background-color: #ffe0e0;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+}
+
+.mensaje-exito {
+  background-color: #e0ffe0;
+  color: #007700;
+  border: 1px solid #007700;
+}
+
+.btn-enviar {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #d31414;
+  border: 1px solid #000000;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-regresar {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #555;
+  border: 1px solid #000;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mensaje-formulario {
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mensaje-error {
+  background-color: #ffe0e0;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+}
+
+.mensaje-exito {
+  background-color: #e0ffe0;
+  color: #007700;
+  border: 1px solid #007700;
+}

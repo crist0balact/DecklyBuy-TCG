@@ -111,11 +111,13 @@ tiempos.forEach(tiempo => {
 
 //Validación de formulario (contact.html)
 const enviarBtn = document.querySelector('.btn-enviar');
+const mensaje = document.getElementById('mensaje-formulario');
 
 if (enviarBtn) {
   enviarBtn.addEventListener('click', () => {
     const inputs = document.querySelectorAll('.formulario-contacto input');
     let incompleto = false;
+    let emailValido = true;
 
     inputs.forEach(input => {
       if (input.value.trim() === '') {
@@ -126,10 +128,82 @@ if (enviarBtn) {
       }
     });
 
+    const emailInput = inputs[1]; // segundo input es el email
+    const email = emailInput.value.trim();
+
+    // Expresión regular que valida formato y dominio (.com, .cl, etc.)
+    const regexEmail = /^[^\s@]+@[^\s@]+\.(com|cl|net|org|edu|gov|info|biz|co)$/i;
+
+    if (!regexEmail.test(email)) {
+      emailValido = false;
+      emailInput.style.borderColor = 'red';
+    }
+
+    mensaje.style.display = 'block';
+
     if (incompleto) {
-      alert('Por favor completa todos los campos antes de enviar.');
+      mensaje.textContent = 'Por favor completa todos los campos antes de enviar.';
+      mensaje.className = 'mensaje-formulario mensaje-error';
+    } else if (!emailValido) {
+      mensaje.textContent = 'Ingresa un correo válido con dominio reconocido (.com, .cl, etc).';
+      mensaje.className = 'mensaje-formulario mensaje-error';
     } else {
-      alert('¡Formulario enviado correctamente!');
+      mensaje.textContent = '¡Formulario enviado correctamente!';
+      mensaje.className = 'mensaje-formulario mensaje-exito';
     }
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Función para validar login
+  const loginBtn = document.querySelector(".btn-enviar");
+  const mensajeLogin = document.getElementById("mensaje-login");
+
+  if (loginBtn) {
+    loginBtn.addEventListener("click", function () {
+      const emailInput = document.querySelector('input[type="email"]');
+      const passwordInput = document.querySelector('input[type="password"]');
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      const regexEmail = /^[^\s@]+@[^\s@]+\.(com|cl|net|org|edu|gov|info|biz|co)$/i;
+
+      // Reset estilos
+      emailInput.style.borderColor = '#000';
+      passwordInput.style.borderColor = '#000';
+      mensajeLogin.style.display = 'block';
+
+      if (email === '' || password === '') {
+        mensajeLogin.textContent = 'Por favor completa todos los campos.';
+        mensajeLogin.className = 'mensaje-formulario mensaje-error';
+        if (email === '') emailInput.style.borderColor = 'red';
+        if (password === '') passwordInput.style.borderColor = 'red';
+      } else if (!regexEmail.test(email)) {
+        mensajeLogin.textContent = 'Ingresa un correo válido con dominio reconocido (.com, .cl, etc).';
+        mensajeLogin.className = 'mensaje-formulario mensaje-error';
+        emailInput.style.borderColor = 'red';
+      } else {
+        mensajeLogin.textContent = 'La cuenta no ha sido creada aún.';
+        mensajeLogin.className = 'mensaje-formulario mensaje-error';
+      }
+    });
+  }
+
+  // Botón REGRESAR en login.html
+  const regresarBtn = document.querySelector(".btn-regresar");
+
+  if (regresarBtn) {
+    regresarBtn.addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
+  }
+
+  // Redirección global del botón "Ingresar →" en todas las páginas
+  const loginButton = document.getElementById("login-button");
+
+  if (loginButton) {
+    loginButton.addEventListener("click", function () {
+      window.location.href = "login.html";
+    });
+  }
+});

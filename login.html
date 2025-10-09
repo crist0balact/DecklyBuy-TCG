@@ -1,33 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DecklyBuyTCG - Iniciar sesión</title>
-  <meta content="Página de acceso para usuarios de DecklyBuyTCG" name="description"/>
+  <meta name="description" content="Página de acceso para usuarios de DecklyBuyTCG">
+
+  <!-- Enlace a hoja de estilos y script principal -->
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
 
+  <!-- Sección principal con formulario de inicio de sesión -->
   <main class="zona-contacto">
     <div class="formulario-contacto">
+      <!-- Título y descripción del formulario -->
       <h1>Iniciar sesión</h1>
       <p>Accede a tu cuenta para comprar, vender o gestionar tus cartas TCG.</p>
 
+      <!-- Campo para correo electrónico -->
       <h4>Correo electrónico</h4>
       <input type="email" placeholder="Ej: usuario@correo.com">
 
+      <!-- Campo para contraseña -->
       <h4>Contraseña</h4>
       <input type="password" placeholder="••••••••">
 
-      <!-- Mensaje de validación -->
+      <!-- Área para mostrar mensajes de validación (éxito o error) -->
       <div id="mensaje-login" class="mensaje-formulario"></div>
 
+      <!-- Botón para enviar el formulario -->
       <button class="btn-enviar">INGRESAR</button>
+
+      <!-- Botón para regresar a la página anterior -->
       <button class="btn-regresar">← REGRESAR</button>
     </div>
   </main>
+
+  <!-- Pie de página con enlaces legales y redes sociales -->
+  <footer class="footer">
+    <div class="footer-contenido">
+      <p>&copy; 2025 DecklyBuyTCG. Todos los derechos reservados.</p>
+      <ul class="footer-enlaces">
+        <li><a href="privacy.html">Política de Privacidad</a></li>
+        <li><a href="terms.html">Términos y Condiciones</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="footer-redes">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

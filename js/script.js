@@ -1,69 +1,50 @@
-//Función botón Categorias Pokémon
+// ===============================
+// NAVEGACIÓN DINÁMICA ENTRE CATEGORÍAS (categories.html)
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
-  const btnPokemon = document.getElementById("btn-pokemon");
+  const botones = {
+    "btn-pokemon": "seccion-pokemon",
+    "btn-magic": "seccion-magic",
+    "btn-yugioh": "seccion-yugioh",
+    "btn-mitos": "seccion-mitos"
+  };
 
-  if (btnPokemon) {
-    btnPokemon.addEventListener("click", function () {
-      window.location.href = "categories-pokemon.html";
-    });
-  }
-});
+  const vistaInicial = document.querySelector(".bloque-promos");
+  const tituloPrincipal = document.querySelector(".programada");
+  const secciones = document.querySelectorAll(".categoria-seccion");
 
-//Función botón Categorias Magic The Gathering
-document.addEventListener("DOMContentLoaded", function () {
-  const btnMagic = document.getElementById("btn-magic");
+  Object.entries(botones).forEach(([btnId, seccionId]) => {
+    const boton = document.getElementById(btnId);
+    const seccion = document.getElementById(seccionId);
 
-  if (btnMagic) {
-    btnMagic.addEventListener("click", function () {
-      window.location.href = "categories-magic.html";
-    });
-  }
-});
+    if (boton && seccion) {
+      boton.addEventListener("click", () => {
+        if (vistaInicial) vistaInicial.style.display = "none";
+        if (tituloPrincipal) tituloPrincipal.style.display = "none";
+        secciones.forEach(sec => sec.style.display = "none");
+        seccion.style.display = "block";
 
-//Función botón Categorias YuGiOh
-document.addEventListener("DOMContentLoaded", function () {
-  const btnYugioh = document.getElementById("btn-yugioh");
+        // Mostrar todas las cartas
+        const cartas = seccion.querySelectorAll('.bloque-carta');
+        cartas.forEach(carta => carta.style.display = 'flex');
+      });
+    }
+  });
 
-  if (btnYugioh) {
-    btnYugioh.addEventListener("click", function () {
-      window.location.href = "categories-yugioh.html";
-    });
-  }
-});
+  const volverBtns = document.querySelectorAll(".btn-volver");
 
-//Función botón Categorias Mitos y Leyendas
-document.addEventListener("DOMContentLoaded", function () {
-  const btnMitos = document.getElementById("btn-mitos");
-
-  if (btnMitos) {
-    btnMitos.addEventListener("click", function () {
-      window.location.href = "categories-mitos.html";
-    });
-  }
-});
-
-
-//Filtrado de cartas (index.html)
-const searchButton = document.getElementById('search-button');
-const searchInput = document.getElementById('search-input');
-
-if (searchButton && searchInput) {
-  searchButton.addEventListener('click', () => {
-    const query = searchInput.value.toLowerCase();
-    const cartas = document.querySelectorAll('.bloque-carta');
-
-    cartas.forEach(carta => {
-      const nombre = carta.querySelector('.nombre-carta')?.textContent.toLowerCase();
-      const descripcion = carta.querySelector('.descripcion-carta')?.textContent.toLowerCase();
-      const tipo = carta.querySelector('.tipo-tcg')?.textContent.toLowerCase();
-
-      const coincide = nombre?.includes(query) || descripcion?.includes(query) || tipo?.includes(query);
-      carta.style.display = coincide ? 'flex' : 'none';
+  volverBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      secciones.forEach(sec => sec.style.display = "none");
+      if (vistaInicial) vistaInicial.style.display = "flex";
+      if (tituloPrincipal) tituloPrincipal.style.display = "flex";
     });
   });
-}
+});
 
-//Temporizador de ofertas (offers.html)
+// ===============================
+// TEMPORIZADOR DE OFERTAS (offers.html)
+// ===============================
 const tiempos = document.querySelectorAll('.tiempo-oferta');
 
 tiempos.forEach(tiempo => {
@@ -71,9 +52,7 @@ tiempos.forEach(tiempo => {
   const match = texto.match(/(\d+)h\s+(\d+)m\s+(\d+)s/i);
 
   if (match) {
-    let horas = parseInt(match[1]);
-    let minutos = parseInt(match[2]);
-    let segundos = parseInt(match[3]);
+    let [horas, minutos, segundos] = match.slice(1).map(Number);
 
     const actualizar = () => {
       if (horas === 0 && minutos === 0 && segundos === 0) {
@@ -96,7 +75,6 @@ tiempos.forEach(tiempo => {
         segundos--;
       }
 
-      // Formato con ceros delante
       const h = String(horas).padStart(2, '0');
       const m = String(minutos).padStart(2, '0');
       const s = String(segundos).padStart(2, '0');
@@ -104,16 +82,18 @@ tiempos.forEach(tiempo => {
       tiempo.textContent = `⌛ ${h}h ${m}m ${s}s`;
     };
 
-    actualizar(); // actualiza inmediatamente
-    setInterval(actualizar, 1000); // actualiza cada segundo
+    actualizar();
+    setInterval(actualizar, 1000);
   }
 });
 
-//Validación de formulario (contact.html)
+// ===============================
+// VALIDACIÓN DE FORMULARIO (contact.html)
+// ===============================
 const enviarBtn = document.querySelector('.btn-enviar');
 const mensaje = document.getElementById('mensaje-formulario');
 
-if (enviarBtn) {
+if (enviarBtn && mensaje) {
   enviarBtn.addEventListener('click', () => {
     const inputs = document.querySelectorAll('.formulario-contacto input');
     let incompleto = false;
@@ -128,10 +108,8 @@ if (enviarBtn) {
       }
     });
 
-    const emailInput = inputs[1]; // segundo input es el email
+    const emailInput = inputs[1];
     const email = emailInput.value.trim();
-
-    // Expresión regular que valida formato y dominio (.com, .cl, etc.)
     const regexEmail = /^[^\s@]+@[^\s@]+\.(com|cl|net|org|edu|gov|info|biz|co)$/i;
 
     if (!regexEmail.test(email)) {
@@ -154,21 +132,21 @@ if (enviarBtn) {
   });
 }
 
+// ===============================
+// VALIDACIÓN DE LOGIN (login.html)
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
-  // Función para validar login
   const loginBtn = document.querySelector(".btn-enviar");
   const mensajeLogin = document.getElementById("mensaje-login");
 
-  if (loginBtn) {
+  if (loginBtn && mensajeLogin) {
     loginBtn.addEventListener("click", function () {
       const emailInput = document.querySelector('input[type="email"]');
       const passwordInput = document.querySelector('input[type="password"]');
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
-
       const regexEmail = /^[^\s@]+@[^\s@]+\.(com|cl|net|org|edu|gov|info|biz|co)$/i;
 
-      // Reset estilos
       emailInput.style.borderColor = '#000';
       passwordInput.style.borderColor = '#000';
       mensajeLogin.style.display = 'block';
@@ -189,7 +167,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Botón REGRESAR en login.html
+  // ===============================
+  // BOTÓN REGRESAR (login.html)
+  // ===============================
   const regresarBtn = document.querySelector(".btn-regresar");
 
   if (regresarBtn) {
@@ -198,7 +178,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Redirección global del botón "Ingresar →" en todas las páginas
+  // ===============================
+  // BOTÓN INGRESAR GLOBAL (todas las páginas)
+  // ===============================
   const loginButton = document.getElementById("login-button");
 
   if (loginButton) {

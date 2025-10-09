@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DecklyBuyTCG - Ofertas</title>
-  <meta content="Página donde podrás encontrar todo tipo de cartas TCG: Pokémon, Magic, Yu-Gi-Oh, ect." name="description"/>
+  <meta name="description" content="Página donde podrás encontrar todo tipo de cartas TCG: Pokémon, Magic, Yu-Gi-Oh, etc.">
+
+  <!-- Enlace a hoja de estilos y script principal -->
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
 
-  <!-- Barra superior -->
+  <!-- Encabezado principal con buscador y botón de ingreso -->
   <header>
     <div class="bloque-buscador">
+      <!-- Campo de búsqueda de cartas -->
       <div class="buscador">
         <input type="text" placeholder="BUSCA TU CARTA">
         <button>Buscar</button>
       </div>
+
+      <!-- Botón para iniciar sesión o ingresar -->
       <div class="boton-ingresar">
         <button id="login-button">Ingresar →</button>
       </div>
     </div>
 
-    <!-- Barra navegacion -->
+    <!-- Barra de navegación con enlaces a otras secciones -->
     <nav>
       <ul>
-        <ul>
         <li><a href="index.html">INICIO</a></li>
         <li><a href="categories.html">CATEGORÍAS</a></li>
         <li><a href="offers.html">OFERTAS</a></li>
@@ -34,12 +39,12 @@
     </nav>
   </header>
 
-  <!-- Seccion central -->
+  <!-- Sección principal con listado de cartas en oferta -->
   <main>
     <h2>Ofertas actuales</h2>
     <div class="cartas">
 
-      <!--Carta 1-->
+      <!-- Carta 1: Pikachu con precio original y oferta -->
       <div class="bloque-carta">
         <div class="carta-img">
           <img src="img/pikachu.jpg" alt="Carta Pikachu">
@@ -56,11 +61,11 @@
             <span class="etiqueta">Oferta actual:</span>
             <span class="valor">$3.500</span>
           </div>
-          <div class="tiempo-oferta">ㅤㅤ⌛ 23h 12m 30s</div>
+          <div class="tiempo-oferta">⌛ 23h 12m 30s</div>
         </div>
       </div>
 
-      <!--Carta 2-->
+      <!-- Carta 2: Crewmate con precio original y oferta -->
       <div class="bloque-carta">
         <div class="carta-img">
           <img src="img/crewmate.jpg" alt="Carta Crewmate">
@@ -77,26 +82,26 @@
             <span class="etiqueta">Oferta actual:</span>
             <span class="valor">$2.000</span>
           </div>
-          <div class="tiempo-oferta">ㅤㅤ⌛ 08h 10m 20s</div>
+          <div class="tiempo-oferta">⌛ 08h 10m 20s</div>
         </div>
       </div>
 
-      <!--Carta 3-->
+      <!-- Carta 3: Charizard con fechas programadas -->
       <div class="bloque-carta">
         <div class="carta-img">
           <img src="img/charizard.jpg" alt="Carta Charizard">
         </div>
         <div class="info-carta">
-            <div class="programada">
-                <div class="tipo-tcg">POKÉMON</div>
-                <div class="nombre-carta">Charizard</div>
-                <div class="descripcion-carta">XY Evolutions Holo Card</div>
-            </div>
-          <div class="tiempo-oferta">ㅤ📅FECHAㅤㅤㅤㅤㅤㅤㅤㅤ22/10  -  02-/11</div>
+          <div class="programada">
+            <div class="tipo-tcg">POKÉMON</div>
+            <div class="nombre-carta">Charizard</div>
+            <div class="descripcion-carta">XY Evolutions Holo Card</div>
+          </div>
+          <div class="tiempo-oferta">📅 FECHA: 22/10 - 02/11</div>
         </div>
       </div>
 
-      <!--Carta 4-->
+      <!-- Carta 4: Reshiram con precio original y oferta -->
       <div class="bloque-carta">
         <div class="carta-img">
           <img src="img/reshiram.jpg" alt="Carta Reshiram">
@@ -113,10 +118,29 @@
             <span class="etiqueta">Oferta actual:</span>
             <span class="valor">$7.000</span>
           </div>
-          <div class="tiempo-oferta">ㅤㅤ⌛ 03h 05m 25s</div>
+          <div class="tiempo-oferta">⌛ 03h 05m 25s</div>
         </div>
       </div>
+
     </div>
   </main>
+
+  <!-- Pie de página con enlaces legales y redes sociales -->
+  <footer class="footer">
+    <div class="footer-contenido">
+      <p>&copy; 2025 DecklyBuyTCG. Todos los derechos reservados.</p>
+      <ul class="footer-enlaces">
+        <li><a href="privacy.html">Política de Privacidad</a></li>
+        <li><a href="terms.html">Términos y Condiciones</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="footer-redes">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

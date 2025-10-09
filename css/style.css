@@ -1,10 +1,15 @@
+/* ================================
+   ESTRUCTURA GENERAL
+================================ */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/*barra superior*/ 
+/* ================================
+   ENCABEZADO Y BARRA SUPERIOR
+================================ */
 header {
   background-color: #f2f2f2;
   padding: 10px;
@@ -30,17 +35,19 @@ header {
   padding: 5px;
 }
 
-.buscador button {
+.buscador button,
+.boton-ingresar button {
   padding: 5px 25px;
   font-size: 14px;
 }
 
 .boton-ingresar button {
   padding: 5px 30px;
-  font-size: 14px;
 }
 
-/*barra de accesibilidad*/
+/* ================================
+   NAVEGACIÓN PRINCIPAL
+================================ */
 nav {
   background-color: #e63535;
   padding: 10px;
@@ -65,7 +72,9 @@ nav a {
   font-weight: bold;
 }
 
-/*contenido (titulo seccion)*/
+/* ================================
+   CONTENIDO GENERAL
+================================ */
 main {
   padding: 20px;
 }
@@ -83,7 +92,9 @@ main h2 {
   text-align: center;
 }
 
-/*visualizacion fila de cartas*/
+/* ================================
+   LISTADO DE CARTAS
+================================ */
 .cartas {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -92,7 +103,6 @@ main h2 {
   justify-items: center;
 }
 
-/*personalizcion del bloque*/
 .bloque-carta {
   display: flex;
   align-items: center;
@@ -125,14 +135,12 @@ main h2 {
   text-align: center;
 }
 
-/*color y nombre del tcgc*/
 .tipo-tcg {
   color: #888;
   font-size: 14px;
   text-align: center;
 }
 
-/*color y nombre de la carta*/
 .nombre-carta {
   font-weight: bold;
   font-size: 20px;
@@ -140,42 +148,15 @@ main h2 {
   margin-top: 5px;
 }
 
-/*color/personalizacion info*/
 .descripcion-carta {
   color: #666;
   font-size: 14px;
   margin-top: 5px;
 }
 
-/*bloque del precio*/
-.precio-oferta {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #222;
-  font-size: 16px;
-}
-
-.precio-oferta .etiqueta {
-  font-size: 14px;
-  color: #555;
-}
-
-.precio-oferta .valor {
-  font-size: 18px;
-  color: #29c909;
-  margin-top: 5px;
-}
-
-.tiempo-oferta {
-  margin-top: 50px;
-  font-size: 12px;
-  color: #000000;
-  text-align: center;
-}
-
-/* Alineación horizontal de los bloques de promoción */
+/* ================================
+   BLOQUES DE PROMOCIÓN
+================================ */
 .bloque-promos {
   display: flex;
   justify-content: center;
@@ -189,13 +170,14 @@ main h2 {
   max-width: none;
 }
 
-/* Agranda las imágenes solo en la sección de promociones */
 .bloque-promos .carta-img img {
   width: 350px;
   height: 200px;
 }
 
-/* Ajustes exclusivos para categories.html */
+/* ================================
+   BLOQUES DE CATEGORÍAS
+================================ */
 .bloque-carta-categorias {
   display: flex;
   flex-direction: column;
@@ -220,7 +202,39 @@ main h2 {
   display: block;
 }
 
-/*ajustes para contacto*/
+/* ================================
+   BLOQUES DE OFERTA
+================================ */
+.precio-oferta {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #222;
+  font-size: 16px;
+}
+
+.precio-oferta .etiqueta {
+  font-size: 14px;
+  color: #555;
+}
+
+.precio-oferta .valor {
+  font-size: 18px;
+  color: #29c909;
+  margin-top: 5px;
+}
+
+.tiempo-oferta {
+  margin-top: 50px;
+  font-size: 12px;
+  color: #000;
+  text-align: center;
+}
+
+/* ================================
+   SECCIÓN DE CONTACTO
+================================ */
 .zona-contacto {
   display: flex;
   justify-content: center;
@@ -245,7 +259,7 @@ main h2 {
 }
 
 .info-contacto h3 span {
-  color: #c00; 
+  color: #c00;
 }
 
 .info-contacto p {
@@ -255,11 +269,14 @@ main h2 {
   text-align: center;
 }
 
+/* ================================
+   FORMULARIOS
+================================ */
 .formulario-contacto {
   width: 430px;
   padding: 20px;
   border: 2px solid #000;
-  border-radius: 0px;
+  border-radius: 0;
   color: #333;
   text-align: center;
 }
@@ -283,66 +300,52 @@ main h2 {
   border-radius: 4px;
 }
 
-.btn-enviar {
-  display: block;
-  margin-top: 20px;            
-  width: 100%;                 
-  padding: 12px 0;            
-  background-color: #d31414;
-  border: 1px solid #000000;
-  color: #ffffff;
-  font-size: 15px;
-  border-radius: 4px;
-}
-
-.mensaje-formulario {
-  display: none;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.mensaje-error {
-  background-color: #ffe0e0;
-  color: #d8000c;
-  border: 1px solid #d8000c;
-}
-
-.mensaje-exito {
-  background-color: #e0ffe0;
-  color: #007700;
-  border: 1px solid #007700;
-}
-
-.btn-enviar {
-  display: block;
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px 0;
-  background-color: #d31414;
-  border: 1px solid #000000;
-  color: #ffffff;
-  font-size: 15px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
+/* ================================
+   BOTONES
+================================ */
+.btn-enviar,
 .btn-regresar {
   display: block;
   margin-top: 20px;
   width: 100%;
   padding: 12px 0;
-  background-color: #555;
-  border: 1px solid #000;
-  color: #fff;
   font-size: 15px;
   border-radius: 4px;
   cursor: pointer;
 }
 
+.btn-enviar {
+  background-color: #d31414;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.btn-regresar {
+  background-color: #555;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+/* ================================
+   BOTÓN VOLVER A CATEGORÍAS
+================================ */
+.btn-volver {
+  margin: 30px auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #e63535;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* ================================
+   MENSAJES DE FORMULARIO
+================================ */
 .mensaje-formulario {
   display: none;
   margin-bottom: 15px;
@@ -363,4 +366,49 @@ main h2 {
   background-color: #e0ffe0;
   color: #007700;
   border: 1px solid #007700;
+}
+
+/* ================================
+   PIE DE PÁGINA
+================================ */
+.footer {
+  background-color: #f2f2f2;
+  padding: 30px 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-contenido {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-enlaces {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer-enlaces a {
+  text-decoration: none;
+  color: #e63535;
+  font-weight: bold;
+}
+
+.footer-redes {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-redes a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
 }

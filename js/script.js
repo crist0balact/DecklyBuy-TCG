@@ -95,35 +95,72 @@ const mensaje = document.getElementById('mensaje-formulario');
 
 if (enviarBtn && mensaje) {
   enviarBtn.addEventListener('click', () => {
-    const inputs = document.querySelectorAll('.formulario-contacto input');
-    let incompleto = false;
-    let emailValido = true;
+    // Selección precisa de campos
+    const nombreInput = document.querySelector('input[placeholder="Ej: Sebastián González"]');
+    const emailInput = document.querySelector('input[placeholder="Ej: ejemplo@correo.com"]');
+    const cartaInput = document.querySelector('input[placeholder="Nombre de la carta que buscas"]');
 
-    inputs.forEach(input => {
-      if (input.value.trim() === '') {
-        incompleto = true;
-        input.style.borderColor = 'red';
-      } else {
-        input.style.borderColor = '#000';
-      }
-    });
-
-    const emailInput = inputs[1];
+    const nombre = nombreInput.value.trim();
     const email = emailInput.value.trim();
-    const regexEmail = /^[^\s@]+@[^\s@]+\.(com|cl|net|org|edu|gov|info|biz|co)$/i;
+    const carta = cartaInput.value.trim();
 
-    if (!regexEmail.test(email)) {
-      emailValido = false;
-      emailInput.style.borderColor = 'red';
+    let errores = [];
+
+    // Validación campo nombre
+    if (nombre === '') {
+      errores.push('El campo "Nombre completo" es obligatorio.');
+      nombreInput.style.borderColor = 'red';
+    } else {
+      nombreInput.style.borderColor = '#000';
     }
 
-    mensaje.style.display = 'block';
+    // Validación campo correo
+    emailInput.style.borderColor = '#000';
+    if (email === '') {
+      errores.push('El campo "Correo electrónico" es obligatorio.');
+      emailInput.style.borderColor = 'red';
+    } else if (!email.includes('@')) {
+      errores.push('El correo debe contener el símbolo "@".');
+      emailInput.style.borderColor = 'red';
+    } else {
+      const [local, domain] = email.split('@');
+      if (!local || local.trim() === '') {
+        errores.push('Falta el nombre de la dirección antes del "@".');
+        emailInput.style.borderColor = 'red';
+      }
 
-    if (incompleto) {
-      mensaje.textContent = 'Por favor completa todos los campos antes de enviar.';
-      mensaje.className = 'mensaje-formulario mensaje-error';
-    } else if (!emailValido) {
-      mensaje.textContent = 'Ingresa un correo válido con dominio reconocido (.com, .cl, etc).';
+      if (!domain || domain.trim() === '') {
+        errores.push('Falta el dominio después del "@".');
+        emailInput.style.borderColor = 'red';
+      } else {
+        const domainParts = domain.split('.');
+        const nombreDominio = domainParts[0];
+        const extension = domainParts[1];
+
+        if (!nombreDominio || nombreDominio.trim() === '') {
+          errores.push('Falta el nombre del dominio antes del punto (ej: "gmail" en "@gmail.com").');
+          emailInput.style.borderColor = 'red';
+        }
+
+        if (!extension || !/^(com|cl|net|org|edu|gov|info|biz|co)$/i.test(extension)) {
+          errores.push('El dominio debe terminar en una extensión válida como .com, .cl, .net, etc.');
+          emailInput.style.borderColor = 'red';
+        }
+      }
+    }
+
+    // Validación campo carta
+    if (carta === '') {
+      errores.push('El campo "Carta" es obligatorio.');
+      cartaInput.style.borderColor = 'red';
+    } else {
+      cartaInput.style.borderColor = '#000';
+    }
+
+    // Mostrar mensajes
+    mensaje.style.display = 'block';
+    if (errores.length > 0) {
+      mensaje.innerHTML = errores.join('<br>');
       mensaje.className = 'mensaje-formulario mensaje-error';
     } else {
       mensaje.textContent = '¡Formulario enviado correctamente!';

@@ -20,8 +20,52 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  flex-wrap: nowrap;
 }
 
+.logo {
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 80px;
+  max-width: 120px;
+}
+
+/* ================================
+   NAVEGACIÓN PRINCIPAL
+================================ */
+nav {
+  background-color: #e63535;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.barra-navegacion {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding: 0;
+  gap: 1rem;
+}
+
+.barra-navegacion li {
+  margin: 0 100px;
+}
+
+.barra-navegacion a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* ================================
+   BUSCADOR
+================================ */
 .buscador {
   display: flex;
   justify-content: center;
@@ -43,33 +87,7 @@ header {
 
 .boton-ingresar button {
   padding: 5px 30px;
-}
-
-/* ================================
-   NAVEGACIÓN PRINCIPAL
-================================ */
-nav {
-  background-color: #e63535;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  margin: 0 100px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+  flex-shrink: 0;
 }
 
 /* ================================
